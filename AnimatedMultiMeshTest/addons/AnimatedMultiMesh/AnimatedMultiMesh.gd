@@ -1,18 +1,24 @@
 extends MultiMeshInstance2D
 
-## The main class of the plgin, it is a multimesh that uses a spritesheet to animate. 
+## The main class of the plugin, it is a multimesh that uses a spritesheet to animate. 
 class_name AnimatedMultiMesh
 
+## The more complex application of the plugin
 @export var complex:bool = false
+## The speed of the animation
 @export var animationSpeed:float = 1.0
+
 @export_category("Spritesheet Settings")
+## the horizontal rows in the spritesheet
 @export var rowsInSheet = 1
+## the vertical columns in the spritesheet
 @export var columnsInSheet = 1
 
 @onready var multi = get_multimesh()
 
 func _ready():
 	var shader = get_material()
+	shader.set_shader(preload("res://addons/AnimatedMultiMesh/MultiMeshAnimation.gdshader"))
 	shader.set_shader_parameter("col", float(columnsInSheet))
 	shader.set_shader_parameter("row", float(rowsInSheet))
 	if complex != true:
@@ -23,7 +29,7 @@ func _process(delta):
 	animate(delta)
 	if complex == true:
 		complexTimer += delta
-		if complexTimer > 0.5:
+		if complexTimer > animationSpeed:
 			activate()
 			complexTimer = 0.0
 

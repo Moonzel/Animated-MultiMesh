@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://j2iyslalqjq8"]
 
-[ext_resource type="Shader" path="res://PerfBulletsAnimation.gdshader" id="1_a5j56"]
-[ext_resource type="Script" path="res://AnimatedMultiMesh.gd" id="2_plq5d"]
-[ext_resource type="Texture2D" uid="uid://xgnbp1mrnhc8" path="res://test_bullet_animation_sheet.png" id="2_yvrx3"]
+[ext_resource type="Shader" path="res://addons/AnimatedMultiMesh/MultiMeshAnimation.gdshader" id="1_3iheb"]
+[ext_resource type="Texture2D" uid="uid://xgnbp1mrnhc8" path="res://addons/AnimatedMultiMesh/test_bullet_animation_sheet.png" id="2_ecv68"]
+[ext_resource type="Script" path="res://addons/AnimatedMultiMesh/AnimatedMultiMesh.gd" id="3_cvnlf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_enifd"]
-shader = ExtResource("1_a5j56")
+shader = ExtResource("1_3iheb")
 shader_parameter/col = null
 shader_parameter/row = null
 
@@ -21,8 +21,7 @@ buffer = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 [node name="AnimatedMultiMesh" type="MultiMeshInstance2D"]
 material = SubResource("ShaderMaterial_enifd")
 multimesh = SubResource("MultiMesh_p27s5")
-texture = ExtResource("2_yvrx3")
-script = ExtResource("2_plq5d")
-complex = true
+texture = ExtResource("2_ecv68")
+script = ExtResource("3_cvnlf")
 rowsInSheet = 2
 columnsInSheet = 2
