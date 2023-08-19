@@ -23,5 +23,6 @@ material = SubResource("ShaderMaterial_enifd")
 multimesh = SubResource("MultiMesh_p27s5")
 texture = ExtResource("2_yvrx3")
 script = ExtResource("2_plq5d")
+complex = true
 rowsInSheet = 2
 columnsInSheet = 2
